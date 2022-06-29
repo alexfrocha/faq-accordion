@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+:root {
+    --very-dark-desaturated-blue-color: hsl(238, 29%, 16%);
+    --soft-red-color: hsl(14, 88%, 65%);
+    --soft-violet-color: hsl(273, 75%, 66%);
+    --soft-blue-color: hsl(240, 73%, 65%);
+    --very-dark-grayish-blue-color: hsl(237, 12%, 33%);
+    --dark-grayish-blue-color: hsl(240, 6%, 50%);
+    --light-grayish-blue-color: hsl(240, 5%, 91%);
+    --common-ff: 'Kumbh Sans', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: var(--common-ff);
+}
+
+/* .bg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+
+} */
+
+body {
+    height: 100vh;
+    background: linear-gradient(0, rgba(101,101,231,1) 24%, rgba(175,103,233,1) 76%);
+
+}
+
+.accordion {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    background-color: white;
+    align-items: center;
+    border-radius: 20px;
+}
+
+.accordion-content {
+    
+    padding: 2.5rem;
+}
+
+.accordion-images {
+    position: relative;
+}
+
+.accordion-image-box {
+    position: absolute;
+    bottom: 1%;
+    left: -20%;
+}
+
+.faq-item {
+    width: 400px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--light-grayish-blue-color);
+    padding: 1rem 0;
+}
+
+.faq-title {
+    font-size: 13px;
+    color: var(--very-dark-grayish-blue-color);
+}
+
+.faq-item.active .faq-title {
+    font-weight: 700;
+}
+
+.faq-text {
+    font-size: 12px;
+    color: var(--very-dark-desaturated-blue-color);
+    line-height: 1.1rem;
+    margin-top: 4px;
+    transition: .5s ease-in-out;
+}
+
+.faq-item:hover .faq-title {
+    color: var(--soft-red-color);
+}
+
+.faq-item.active .faq-arrow {
+    transform: rotate(180deg);
+}
+
+.faq-item:hover {
+    
+    cursor: pointer;
+}
+
+.faq-arrow {
+    width: 12px;
+    height: 8px;
+    margin-top: .3rem;
+    transition: .3s;
+}
+
+.accordion-image {
+    width: 410px;
+    height: 310px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-image: url('../../images/illustration-woman-online-desktop.svg');
+}
+
+
+.none {
+    display: none;
+}
+
+.accordion-title {
+    font-size: 35px;
+    font-weight: 700;
+}
+
+@media  screen and (max-width: 768px) {
+    .bg {
+        z-index: 0;
+    }
+    .accordion {
+        flex-direction: column;
+        position: static;
+        top: 0;
+        left: 0;
+        transform: translate(0);
+        z-index: 1;
+        width: 90%;
+    }
+    .accordion-image {
+        width: 300px;
+        height: 230px;
+    }
+    .accordion-image-box {
+        width: 100px;
+        height: 100px;
+        left: -10%;
+        bottom: 10%;
+    }
+    .faq-item {
+        width: 100%;
+    }
+    body {
+        display: flex;
+        align-items: center;
+        height: 100vh;
+        justify-content: center;
+    }
+    .accordion-title {
+        text-align: center;
+    }
+}
