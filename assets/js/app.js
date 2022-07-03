@@ -9,6 +9,7 @@ function removerItemsAtivos() {
 function ativarItem() {
     for(let i = 0; i < items.length; i++) {
         items[i].addEventListener('click', (e) => {
+            if(items[i].classList.contains('active')) return removerItemsAtivos()
             removerItemsAtivos()
             if(!items[i].classList.contains('active')) {
                 items[i].classList.add('active');
